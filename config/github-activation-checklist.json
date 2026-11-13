@@ -1,0 +1,14 @@
+{
+  "format": "local-review-checklist-not-a-github-api-payload",
+  "repository": "carlosfelix06/central-ia-pessoal",
+  "published": false,
+  "ci_enabled": false,
+  "ai_enabled": false,
+  "allow_auto_merge": false,
+  "required_check": "checks",
+  "main_direct_push": "restrict_after_owner_approval",
+  "human_merge_required": true,
+  "max_dispatches_per_hour": 2,
+  "max_dispatches_per_pr": 2,
+  "activation_requires_owner_approval": true
+}

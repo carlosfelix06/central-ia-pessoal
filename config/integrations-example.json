@@ -1,0 +1,37 @@
+{
+  "settings": {
+    "mode": "mock",
+    "budget_microusd": 10000,
+    "call_microusd": 5000,
+    "max_attempts": 2,
+    "timeout_seconds": 10
+  },
+  "provider_budgets": {
+    "openai": 10000,
+    "gemini": 10000
+  },
+  "rpm": {
+    "openai": 2,
+    "gemini": 2
+  },
+  "steps": [
+    {
+      "agent": "coordenador_bi",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "max_output_tokens": 256
+    },
+    {
+      "agent": "engenheiro_dados",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "max_output_tokens": 256
+    },
+    {
+      "agent": "analista_bi",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "max_output_tokens": 256
+    }
+  ]
+}

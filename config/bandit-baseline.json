@@ -1,0 +1,12 @@
+{
+  "accepted_findings": [
+    {
+      "path": "central/providers.py",
+      "test_id": "B310",
+      "line_number": 45,
+      "file_sha256": "02cc797fc723a5f8559f011289cbfa6c0166c44269bf83129a66edcda705484f",
+      "reason": "Adaptador legado preservado: endpoints HTTPS fixos no cÃ³digo e chamadas bloqueadas por padrÃ£o. Qualquer mudanÃ§a no arquivo exige reavaliaÃ§Ã£o; nÃ£o hÃ¡ exclusÃ£o global de B310.",
+      "hash_encoding": "UTF-8 with LF-normalized newlines"
+    }
+  ]
+}

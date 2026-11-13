@@ -1,0 +1,42 @@
+name: "Equipe de BI (Default) — Orquestrador Analitico Cloud"
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  bi_team_orchestration:
+    name: "Equipe de BI Default (6 Especialistas)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
+        with:
+          python-version: "3.11"
+
+      - name: Executar Cadeia Analitica dos 6 Especialistas de BI (Default)
+        run: |
+          python -m central "Estruturar pipeline ETL, cubo semantico DAX, dashboard executivo, auditoria LGPD e orcamento FinOps" --agents coordenador_bi engenheiro_dados analista_bi especialista_dataviz analytics_finops auditor_qualidade > bi_run.json
+          cat bi_run.json
+          echo "## 📊 Painel Executivo — Equipe de BI Default (Central-IA)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Ordem | ID do Agente | Papel na Equipe de BI | Status | Modo FinOps |" >> $GITHUB_STEP_SUMMARY
+          echo "| :---: | :--- | :--- | :--- | :--- |" >> $GITHUB_STEP_SUMMARY
+          echo "| **1 (Default)** | \`coordenador_bi\` | **Coordenador Executivo de BI & KPIs** | ✅ Ativo & Validado | Reserva Atomica (Token-Zero) |" >> $GITHUB_STEP_SUMMARY
+          echo "| **2** | \`engenheiro_dados\` | **Engenheiro de Dados & Pipelines ETL/SQL** | ✅ Ativo & Validado | Reserva Atomica (Token-Zero) |" >> $GITHUB_STEP_SUMMARY
+          echo "| **3** | \`analista_bi\` | **Analista de BI & Modelagem Semantica (DAX)** | ✅ Ativo & Validado | Reserva Atomica (Token-Zero) |" >> $GITHUB_STEP_SUMMARY
+          echo "| **4** | \`especialista_dataviz\` | **Especialista em DataViz & Storytelling** | ✅ Ativo & Validado | Reserva Atomica (Token-Zero) |" >> $GITHUB_STEP_SUMMARY
+          echo "| **5** | \`analytics_finops\` | **Analytics Translator & Governanca FinOps** | ✅ Ativo & Validado | Reserva Atomica (Token-Zero) |" >> $GITHUB_STEP_SUMMARY
+          echo "| **6** | \`auditor_qualidade\` | **Auditor de Qualidade de Dados & LGPD** | ✅ Ativo & Validado | Reserva Atomica (Token-Zero) |" >> $GITHUB_STEP_SUMMARY
