@@ -1,18 +1,14 @@
-name: "Equipe de BI (Default) — Orquestrador Analitico Cloud"
+name: "Equipe de BI (Default) — Orquestrador Analitico Cloud (Demo)"
 
 on:
-  push:
-    branches: ["main"]
   workflow_dispatch:
-  schedule:
-    - cron: "0 */6 * * *"
 
 permissions:
   contents: read
 
 jobs:
   bi_team_orchestration:
-    name: "Equipe de BI Default (6 Especialistas)"
+    name: "Equipe de BI Default [DEMO SIMULADA — Sem Escrita Jira/GitHub]"
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
